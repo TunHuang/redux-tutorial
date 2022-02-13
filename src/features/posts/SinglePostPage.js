@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { PostAuthor } from './PostAuthor.js';
 import { TimeAgo } from './TimeAgo.js';
+import { ReactionButtons } from './ReactionButtons.js';
 
 export const SinglePostPage = () => {
   const { postId } = useParams();
@@ -28,6 +29,7 @@ export const SinglePostPage = () => {
         <Link to={`/editPost/${post.id}`} className="button">
           Edit Post
         </Link>
+        <ReactionButtons post={post} />
       </article>
     </section>
   )
